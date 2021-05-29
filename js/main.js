@@ -9,6 +9,16 @@ let turn; // 1 for x, 0 for o, x goes first
 const resetEl = document.getElementById('reset');
 const boardBtnEls = document.querySelectorAll('.board');
 const gameBoard = document.getElementById('gameboard');
+const b1El = document.getElementById('board1');
+const b2El = document.getElementById('board2');
+const b3El = document.getElementById('board3');
+const b4El = document.getElementById('board4');
+const b5El = document.getElementById('board5');
+const b6El = document.getElementById('board6');
+const b7El = document.getElementById('board7');
+const b8El = document.getElementById('board8');
+const b9El = document.getElementById('board9');
+
 /*----- event listeners -----*/
 gameBoard.addEventListener('click', handleTicTac);
 /*----- functions -----*/
@@ -32,13 +42,49 @@ function init() {
 function render() {
     //whos turn it is will go here in an html element
     //
-    renderButtons();
+    winner = getWinnerStatus();
+    //renderButtons();
 }
 
-function renderButtons() {
-    boardBtnEls.forEach(function(btn) {
+function getWinnerStatus() {
+    horiCheck();
+    vertCheck();
+    diagCheck();
+}
 
-    })
+function horiCheck() {
+    for (let i = 1; i <= 7; i += 3) {
+        const iText = document.getElementById(`board${i}`).innerText;
+        if (iText === 'X' || iText === 'O'){
+            if (iText === document.getElementById(`board${i+1}`).innerText 
+            && iText === document.getElementById(`board${i+2}`).innerText)
+            winner = iText; 
+        }
+    }
+}
+
+function vertCheck() {
+    for (let i = 1; i < 4; i++) {
+        const iText = document.getElementById(`board${i}`).innerText;
+        if (iText === 'X' || iText === 'O'){
+            if (iText === document.getElementById(`board${i+3}`).innerText 
+            && iText === document.getElementById(`board${i+6}`).innerText)
+            winner = iText; 
+        } 
+    }
+}
+
+function diagCheck() {
+    if (b1El.innerText === 'X' || b1El.innerText === 'O') {
+        if (b1El.innerText === b5El.innerText && b1El.innerText === b9El.innerText) {
+            winner = b1El;
+        }
+    }
+    if (b3El.innerText === 'X' || b3El.innerText === 'O') {
+        if (b3El.innerText === b5El.innerText && b3El.innerText === b7El.innerText) {
+            winner = b3El.innerText;
+        }
+    }
 }
 
 function handleTicTac(evt) {
@@ -47,6 +93,7 @@ function handleTicTac(evt) {
 
     btn.textContent = (turn) ? 'X' : 'O';
     turn = !turn;
+    render();
 }
 /*----- win logic -----
 a win  could be any of the following : 
