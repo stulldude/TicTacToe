@@ -33,6 +33,7 @@ function init() {
     winner = null;
     for (let btn of boardBtnEls) {
         btn.textContent = " ";
+        btn.disabled = false;
     }
     render();
 }
@@ -57,8 +58,7 @@ function getWinnerStatus() {
     if (winner != null) {
         turnEl.innerText = `${winner} WON`;
         disableBtns();
-    }
-    if (count == 9) {
+    } else if (count == 9) {
         turnEl.innerText = 'TIE';
     }
 }
@@ -104,8 +104,10 @@ function handleTicTac(evt) {
 
     btn.textContent = (turn) ? 'X' : 'O';
     btn.disabled = true;
+
     turn = !turn;
     count++;
+
     render();
 }
 

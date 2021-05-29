@@ -1,3 +1,20 @@
+@keyframes header-ani {
+    from {color: var(--accent-dark)}
+    to {color: var(white)}
+}
+
+@keyframes general-ani {
+    from {color: var(--accent-light)}
+    to {color: var(--accent-dark)}
+}
+
+@keyframes board-ani {
+    from {border-color: var(--accent-light);
+          border-width: 0;}
+    to {border-color: var(--accent-dark);
+        border-width: .6vmin;}
+}
+
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -15,6 +32,10 @@ header {
     background-color: var(--accent-dark);
     color: white;
     text-align: center;
+    letter-spacing: 0.4vmin;
+    animation-name: header-ani;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
 }
 
 main {
@@ -29,12 +50,15 @@ body {
 }
 
 #turn {
+    font-size: 4.5vmin;
     flex-direction: column;
     justify-content: center;
     color: var(--accent-dark);
     font-weight: bold;
     text-align: center;
-
+    animation-name: general-ani;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
 }
 
 #gameboard {
@@ -51,13 +75,16 @@ body {
     width: 12vmin;
     height: 12vmin;
     padding: 0%;
-    border: .6vmin solid black;;
+    /* border: .6vmin solid var(--accent-light);; */
     border-radius: 1.4vmin;
     background: none;
     /* background: var(--accent-dark); */
     color: var(--accent-dark);
     font-size: 5vmin;
     font-weight: bold;
+    animation-name: board-ani;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 #reset {
@@ -71,6 +98,9 @@ body {
     border-radius: 2vmin;
     outline: none;
     cursor: pointer;
+    animation-name: general-ani;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
 }
 
 /* Game tiles */
