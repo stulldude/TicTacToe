@@ -37,6 +37,20 @@ body {
     align-items: center;
 }
 
+
+.board {
+    width: 12vmin;
+    height: 12vmin;
+    padding: 0%;
+    border: .6vmin solid black;;
+    border-radius: 1.4vmin;
+    background: none;
+    /* background: var(--accent-dark); */
+    color: var(--accent-dark);
+    font-size: 5vmin;
+    font-weight: bold;
+}
+
 #reset {
     font-size: 3vmin;
     font-weight: bold;
@@ -49,21 +63,6 @@ body {
     outline: none;
     cursor: pointer;
 }
-
-.board {
-    width: 12vmin;
-    height: 12vmin;
-    margin: 0%;
-    padding: 0%;
-    border: .6vmin solid black;;
-    border-radius: 1.4vmin;
-    background: none;
-    /* background: var(--accent-dark); */
-    color: var(--accent-dark);
-    font-size: 5vmin;
-    font-weight: bold;
-}
-
 
 /* Game tiles */
 #board1 {
