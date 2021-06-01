@@ -38,21 +38,12 @@ header {
     animation-fill-mode: forwards;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 body {
     background-color: var(--accent-light);
 }
 
 #turn {
-    display: flex;
     font-size: 4.5vmin;
-    flex-direction: column;
-    justify-content: center;
     color: var(--accent-dark);
     font-weight: bold;
     text-align: center;
@@ -62,8 +53,6 @@ body {
 }
 
 #gameboard {
-    display: flex;
-    flex-direction: column;
     padding-top: 4vmin;
     padding-bottom: 4vmin;
     font-size: 0;
@@ -104,6 +93,12 @@ body {
     animation-name: general-ani;
     animation-duration: 5s;
     animation-fill-mode: forwards;
+}
+
+#gameboard, #turn, main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Game tiles */
