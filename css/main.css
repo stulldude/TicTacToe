@@ -42,7 +42,6 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
 }
 
 body {
@@ -50,6 +49,7 @@ body {
 }
 
 #turn {
+    display: flex;
     font-size: 4.5vmin;
     flex-direction: column;
     justify-content: center;
@@ -70,6 +70,9 @@ body {
     align-items: center;
 }
 
+.row {
+    display: flex;
+}
 
 .board {
     width: 12vmin;
